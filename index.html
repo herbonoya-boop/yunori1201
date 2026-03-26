@@ -23,19 +23,14 @@ body{
 h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-d);margin-bottom:2px;text-align:center;}
 .sub{color:var(--muted);font-size:13px;margin-bottom:16px;text-align:center;}
 
-/* ── LOBBY SCREEN ── */
+/* LOBBY */
 #lobbyScreen{width:100%;max-width:500px;}
 .lobby-panel{background:white;border:2px solid var(--wood-l);border-radius:16px;padding:24px;box-shadow:0 4px 20px var(--sh);margin-bottom:16px;text-align:center;}
 .lobby-title{font-family:'Jua',sans-serif;font-size:22px;color:var(--wood-d);margin-bottom:20px;}
-.lobby-input{width:100%;border:2px solid var(--wood-l);border-radius:10px;padding:14px;font-family:'Noto Sans KR',sans-serif;font-size:16px;outline:none;color:var(--text);background:#fffdf8;transition:border-color .2s;margin-bottom:12px;text-align:center;}
+.lobby-input{width:100%;border:2px solid var(--wood-l);border-radius:10px;padding:14px;font-family:'Noto Sans KR',sans-serif;font-size:16px;outline:none;color:var(--text);background:#fffdf8;margin-bottom:12px;text-align:center;}
 .lobby-input:focus{border-color:var(--wood);}
 .lobby-input.room-code{font-family:'Jua',sans-serif;font-size:24px;letter-spacing:4px;text-transform:uppercase;}
-.btn-lobby{
-  width:100%;background:linear-gradient(135deg,var(--yellow),#e6b000);
-  color:var(--text);border:none;border-radius:12px;padding:16px;
-  font-family:'Jua',sans-serif;font-size:18px;cursor:pointer;
-  box-shadow:0 4px 14px rgba(245,200,66,.4);transition:transform .15s;margin-bottom:10px;
-}
+.btn-lobby{width:100%;background:linear-gradient(135deg,var(--yellow),#e6b000);color:var(--text);border:none;border-radius:12px;padding:16px;font-family:'Jua',sans-serif;font-size:18px;cursor:pointer;box-shadow:0 4px 14px rgba(245,200,66,.4);margin-bottom:10px;}
 .btn-lobby:hover:not(:disabled){transform:translateY(-2px);}
 .btn-lobby:disabled{opacity:.5;cursor:not-allowed;}
 .btn-lobby.secondary{background:linear-gradient(135deg,var(--wood-l),var(--wood));color:white;}
@@ -54,19 +49,18 @@ h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-
 .pwi-host{font-size:10px;background:var(--yellow);color:var(--text);padding:2px 6px;border-radius:4px;margin-left:auto;}
 .waiting-msg{color:var(--muted);font-size:13px;margin-top:12px;}
 
-/* ── SETUP SCREEN ── */
+/* SETUP */
 #setupScreen{display:none;width:100%;max-width:600px;}
 .setup-panel{background:white;border:2px solid var(--wood-l);border-radius:16px;padding:20px;box-shadow:0 4px 20px var(--sh);margin-bottom:16px;}
 .setup-title{font-family:'Jua',sans-serif;font-size:18px;color:var(--wood-d);margin-bottom:14px;text-align:center;}
 .piece-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-bottom:14px;}
-.piece-btn{background:#fffdf8;border:2px solid var(--wood-l);border-radius:10px;padding:10px 4px;text-align:center;cursor:pointer;transition:all .15s;}
+.piece-btn{background:#fffdf8;border:2px solid var(--wood-l);border-radius:10px;padding:10px 4px;text-align:center;cursor:pointer;}
 .piece-btn:hover:not(.taken){border-color:var(--wood);background:#fdf0d8;}
 .piece-btn.selected{border-color:var(--yellow);background:#fffbef;box-shadow:0 0 0 2px var(--yellow);}
 .piece-btn.taken{opacity:.35;cursor:not-allowed;background:#f0f0f0;}
 .piece-emoji{font-size:28px;display:block;margin-bottom:3px;}
 .piece-name{font-family:'Jua',sans-serif;font-size:11px;color:var(--muted);}
-.btn-confirm{width:100%;background:linear-gradient(135deg,var(--yellow),#e6b000);color:var(--text);border:none;border-radius:10px;padding:13px;font-family:'Jua',sans-serif;font-size:17px;cursor:pointer;box-shadow:0 4px 14px rgba(245,200,66,.4);transition:transform .15s;}
-.btn-confirm:hover:not(:disabled){transform:translateY(-2px);}
+.btn-confirm{width:100%;background:linear-gradient(135deg,var(--yellow),#e6b000);color:var(--text);border:none;border-radius:10px;padding:13px;font-family:'Jua',sans-serif;font-size:17px;cursor:pointer;}
 .btn-confirm:disabled{opacity:.35;cursor:not-allowed;}
 .player-slots{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
 .slot{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:9px;border:2px solid #f0e4cc;background:#fafafa;}
@@ -77,7 +71,7 @@ h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-
 .slot-ready.yes{background:var(--green);color:white;}
 .slot-ready.no{background:#ddd;color:#888;}
 
-/* ── GAME SCREEN ── */
+/* GAME */
 #gameScreen{display:none;width:100%;max-width:1060px;}
 .game-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;padding:8px 12px;background:white;border-radius:10px;border:1px solid var(--wood-l);}
 .game-room-code{font-family:'Jua',sans-serif;font-size:14px;color:var(--muted);}
@@ -86,59 +80,55 @@ h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-
 .game-layout{display:grid;grid-template-columns:1fr 310px;gap:20px;align-items:start;}
 @media(max-width:740px){.game-layout{grid-template-columns:1fr;}.right-col{order:-1;}}
 
-/* Board */
-.board-wrap{background:var(--board);border:4px solid var(--wood);border-radius:20px;padding:14px;box-shadow:0 6px 30px var(--sh),inset 0 0 0 2px var(--wood-l);}
+.board-wrap{background:var(--board);border:4px solid var(--wood);border-radius:20px;padding:14px;box-shadow:0 6px 30px var(--sh);}
 #boardSvg{display:block;width:100%;max-width:500px;height:auto;margin:0 auto;}
 
-/* Right col */
 .right-col{display:flex;flex-direction:column;gap:14px;}
 .panel{background:white;border:2px solid var(--wood-l);border-radius:14px;padding:16px;box-shadow:0 2px 12px var(--sh);}
 
-/* Yut throw */
-.turn-txt{font-family:'Jua',sans-serif;font-size:17px;text-align:center;margin-bottom:12px;line-height:1.4;}
+.turn-txt{font-family:'Jua',sans-serif;font-size:17px;text-align:center;margin-bottom:12px;}
 .turn-name{color:var(--wood-d);}
 .yut-stage{position:relative;width:100%;height:170px;background:linear-gradient(180deg,#d0eaff 0%,#b0d8f8 35%,var(--bg) 100%);border-radius:12px;border:2px dashed var(--wood-l);overflow:hidden;cursor:pointer;user-select:none;margin-bottom:10px;}
 .yut-stage.disabled{opacity:.5;pointer-events:none;}
-.throw-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;font-family:'Jua',sans-serif;pointer-events:none;z-index:1;flex-direction:column;gap:4px;}
+.throw-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;font-family:'Jua',sans-serif;pointer-events:none;flex-direction:column;gap:4px;}
 .power-bar-wrap{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:80%;height:8px;background:rgba(0,0,0,.1);border-radius:4px;overflow:hidden;}
-.power-bar{height:100%;width:0%;background:linear-gradient(90deg,#4caf6e,#f5c842,#e8534a);border-radius:4px;transition:width .05s;}
-.yut-result-sticks{display:flex;gap:6px;justify-content:center;align-items:flex-end;min-height:48px;margin-bottom:6px;}
+.power-bar{height:100%;width:0%;background:linear-gradient(90deg,#4caf6e,#f5c842,#e8534a);border-radius:4px;}
+.yut-result-sticks{display:flex;gap:6px;justify-content:center;min-height:48px;margin-bottom:6px;}
 .stick-display{width:16px;height:56px;border-radius:8px;position:relative;box-shadow:0 2px 6px rgba(0,0,0,0.2);}
 .stick-flat{background:linear-gradient(180deg,#c8804a,#a06030,#c0784a);border:1.5px solid #804020;}
 .stick-round{background:linear-gradient(180deg,#f0d898,#d8a848,#ecca80);border:1.5px solid #b07828;}
 .stick-baek{background:linear-gradient(180deg,#c8804a,#a06030,#c0784a);border:2px solid #e00;}
-.stick-baek::after{content:'X';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:10px;color:#fff;font-family:'Jua',sans-serif;font-weight:900;}
 .yut-name-display{font-family:'Jua',sans-serif;font-size:22px;color:var(--wood-d);text-align:center;min-height:28px;margin-bottom:8px;}
 
-/* Shortcut choice modal */
+/* Shortcut */
 .shortcut-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:150;align-items:center;justify-content:center;padding:16px;}
 .shortcut-overlay.show{display:flex;}
 .shortcut-popup{background:white;border:4px solid var(--yellow);border-radius:20px;padding:24px;text-align:center;animation:popIn .3s;max-width:400px;width:100%;}
 .shortcut-title{font-family:'Jua',sans-serif;font-size:20px;color:var(--wood-d);margin-bottom:16px;}
 .shortcut-btns{display:flex;gap:12px;justify-content:center;}
-.shortcut-btn{flex:1;padding:16px;border-radius:12px;border:3px solid var(--wood-l);background:#fffdf8;cursor:pointer;transition:all .15s;font-family:'Jua',sans-serif;font-size:15px;}
+.shortcut-btn{flex:1;padding:16px;border-radius:12px;border:3px solid var(--wood-l);background:#fffdf8;cursor:pointer;font-family:'Jua',sans-serif;font-size:15px;}
 .shortcut-btn:hover{border-color:var(--yellow);background:#fffbef;transform:translateY(-3px);}
 .shortcut-btn .path-icon{font-size:32px;display:block;margin-bottom:8px;}
 
-/* Card overlay */
+/* Card */
 .card-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;align-items:center;justify-content:center;padding:16px;}
 .card-overlay.show{display:flex;}
-.card-popup{background:linear-gradient(160deg,#fffdf5,#fff8e8);border:4px solid var(--yellow);border-radius:24px;padding:28px 24px 24px;text-align:center;animation:popIn .4s cubic-bezier(.34,1.56,.64,1);box-shadow:0 12px 50px rgba(0,0,0,.3);max-width:520px;width:100%;}
+.card-popup{background:linear-gradient(160deg,#fffdf5,#fff8e8);border:4px solid var(--yellow);border-radius:24px;padding:28px 24px 24px;text-align:center;animation:popIn .4s;box-shadow:0 12px 50px rgba(0,0,0,.3);max-width:520px;width:100%;}
 @keyframes popIn{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
-.card-popup-title{font-family:'Jua',sans-serif;font-size:13px;letter-spacing:2px;color:var(--muted);margin-bottom:4px;text-transform:uppercase;}
+.card-popup-title{font-family:'Jua',sans-serif;font-size:13px;color:var(--muted);margin-bottom:4px;}
 .card-popup-sub{font-family:'Jua',sans-serif;font-size:20px;color:var(--wood-d);margin-bottom:20px;}
 .card-choices{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.card-choice{background:white;border:3px solid var(--wood-l);border-radius:16px;padding:18px 10px 14px;cursor:pointer;transition:transform .15s,border-color .15s,box-shadow .15s;position:relative;overflow:hidden;}
-.card-choice:hover{transform:translateY(-6px) scale(1.03);border-color:var(--yellow);box-shadow:0 8px 24px rgba(245,200,66,.35);}
+.card-choice{background:white;border:3px solid var(--wood-l);border-radius:16px;padding:18px 10px 14px;cursor:pointer;position:relative;}
+.card-choice:hover{transform:translateY(-6px);border-color:var(--yellow);}
 .card-choice.face-down{background:linear-gradient(135deg,#6c5ce7,#a29bfe);border-color:#6c5ce7;}
 .card-choice.face-down .cc-icon,.card-choice.face-down .cc-title,.card-choice.face-down .cc-desc{visibility:hidden;}
 .card-choice.face-down::after{content:'❓';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:48px;}
 .card-choice.disabled{opacity:.4;pointer-events:none;}
 .cc-icon{font-size:42px;display:block;margin-bottom:10px;}
-.cc-title{font-family:'Jua',sans-serif;font-size:16px;color:var(--wood-d);margin-bottom:4px;}
-.cc-desc{font-size:11px;color:var(--muted);line-height:1.4;}
+.cc-title{font-family:'Jua',sans-serif;font-size:14px;color:var(--wood-d);margin-bottom:4px;}
+.cc-desc{font-size:10px;color:var(--muted);}
 
-/* Winner box */
+/* Winner */
 .winner-box{display:none;background:linear-gradient(135deg,#ffd700,#ffaa00);border-radius:14px;padding:24px;text-align:center;animation:popIn .4s;}
 .winner-box.show{display:block;}
 .winner-box h2{font-family:'Jua',sans-serif;font-size:26px;color:#7a4800;margin-bottom:8px;}
@@ -148,50 +138,33 @@ h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-
 .player-list-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
 @media(max-width:500px){.player-list-bottom{grid-template-columns:repeat(2,1fr);}}
 .p-card{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;border:2px solid #f0e4cc;background:white;}
-.p-card.active{border-color:var(--yellow);background:#fffbef;box-shadow:0 2px 8px rgba(245,200,66,.3);}
+.p-card.active{border-color:var(--yellow);background:#fffbef;}
 .p-card.finished{border-color:var(--green);background:#f0fff4;}
 .p-card.me{box-shadow:inset 0 0 0 2px var(--blue);}
 .p-emoji-big{font-size:24px;}
 .p-info .p-name{font-family:'Jua',sans-serif;font-size:13px;}
 .p-info .p-pos{font-size:10px;color:var(--muted);}
 
-/* ═══ TURN NOTIFICATION ═══ */
-.turn-notify{
-  display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
-  z-index:300;text-align:center;pointer-events:none;
-}
+/* TURN NOTIFY */
+.turn-notify{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:300;text-align:center;pointer-events:none;}
 .turn-notify.show{display:block;animation:turnPop .5s cubic-bezier(.34,1.56,.64,1);}
-@keyframes turnPop{0%{transform:translate(-50%,-50%) scale(0);opacity:0}60%{transform:translate(-50%,-50%) scale(1.1)}100%{transform:translate(-50%,-50%) scale(1);opacity:1}}
-.turn-notify-inner{
-  background:linear-gradient(135deg,#fff,#fffdf0);
-  border:5px solid var(--yellow);border-radius:24px;
-  padding:30px 50px;box-shadow:0 15px 60px rgba(0,0,0,.4);
-}
+@keyframes turnPop{0%{transform:translate(-50%,-50%) scale(0)}60%{transform:translate(-50%,-50%) scale(1.1)}100%{transform:translate(-50%,-50%) scale(1)}}
+.turn-notify-inner{background:linear-gradient(135deg,#fff,#fffdf0);border:5px solid var(--yellow);border-radius:24px;padding:30px 50px;box-shadow:0 15px 60px rgba(0,0,0,.4);}
 .turn-notify-emoji{font-size:60px;animation:bounce .6s infinite alternate;}
 @keyframes bounce{0%{transform:translateY(0)}100%{transform:translateY(-10px)}}
 .turn-notify-text{font-family:'Jua',sans-serif;font-size:28px;color:var(--wood-d);margin-top:10px;}
 .turn-notify-sub{font-family:'Jua',sans-serif;font-size:16px;color:var(--muted);margin-top:4px;}
 
-/* ═══ YUT RESULT DRAMA ═══ */
-.yut-drama{
-  display:none;position:fixed;inset:0;z-index:250;
-  align-items:center;justify-content:center;pointer-events:none;
-}
+/* YUT DRAMA */
+.yut-drama{display:none;position:fixed;inset:0;z-index:250;align-items:center;justify-content:center;pointer-events:none;}
 .yut-drama.show{display:flex;}
-.yut-drama-inner{
-  text-align:center;
-  animation:yutDramaPop .3s cubic-bezier(.34,1.56,.64,1);
-}
-@keyframes yutDramaPop{0%{transform:scale(0) rotate(-10deg);opacity:0}100%{transform:scale(1) rotate(0deg);opacity:1}}
+.yut-drama-inner{text-align:center;animation:yutDramaPop .3s cubic-bezier(.34,1.56,.64,1);}
+@keyframes yutDramaPop{0%{transform:scale(0) rotate(-10deg);opacity:0}100%{transform:scale(1) rotate(0);opacity:1}}
 .yut-drama-inner.exit{animation:yutDramaExit .3s forwards;}
 @keyframes yutDramaExit{to{transform:scale(1.5);opacity:0}}
 .yut-drama-sticks{display:flex;gap:12px;justify-content:center;margin-bottom:16px;}
-.yut-drama-stick{
-  width:30px;height:100px;border-radius:15px;
-  box-shadow:0 6px 20px rgba(0,0,0,.3);
-  animation:stickLand .4s cubic-bezier(.34,1.56,.64,1);
-}
-@keyframes stickLand{0%{transform:translateY(-100px) rotate(0deg);opacity:0}60%{transform:translateY(10px) rotate(720deg)}100%{transform:translateY(0) rotate(720deg);opacity:1}}
+.yut-drama-stick{width:30px;height:100px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,.3);animation:stickLand .4s cubic-bezier(.34,1.56,.64,1);}
+@keyframes stickLand{0%{transform:translateY(-100px) rotate(0);opacity:0}60%{transform:translateY(10px) rotate(720deg)}100%{transform:translateY(0) rotate(720deg);opacity:1}}
 .yut-drama-stick:nth-child(1){animation-delay:0s}
 .yut-drama-stick:nth-child(2){animation-delay:.1s}
 .yut-drama-stick:nth-child(3){animation-delay:.2s}
@@ -199,33 +172,24 @@ h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-
 .yut-drama-stick.flat{background:linear-gradient(180deg,#c8804a,#a06030,#c0784a);border:2px solid #804020;}
 .yut-drama-stick.round{background:linear-gradient(180deg,#f0d898,#d8a848,#ecca80);border:2px solid #b07828;}
 .yut-drama-stick.baek{background:linear-gradient(180deg,#c8804a,#a06030,#c0784a);border:3px solid #e00;}
-.yut-drama-name{
-  font-family:'Jua',sans-serif;font-size:clamp(48px,12vw,80px);
-  color:#fff;text-shadow:0 4px 0 rgba(0,0,0,.3),0 0 40px currentColor;
-  -webkit-text-stroke:2px rgba(0,0,0,.2);
-  animation:yutNamePulse .5s infinite alternate;
-}
+.yut-drama-name{font-family:'Jua',sans-serif;font-size:clamp(48px,12vw,80px);color:#fff;text-shadow:0 4px 0 rgba(0,0,0,.3),0 0 40px currentColor;animation:yutNamePulse .5s infinite alternate;}
 @keyframes yutNamePulse{0%{transform:scale(1)}100%{transform:scale(1.05)}}
 .yut-drama-desc{font-family:'Jua',sans-serif;font-size:20px;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.5);margin-top:8px;}
 .yut-drama-bg{position:fixed;inset:0;z-index:-1;opacity:.9;}
 
-/* ═══ EVENT DRAMA ═══ */
-.event-drama{
-  display:none;position:fixed;inset:0;z-index:280;
-  align-items:center;justify-content:center;pointer-events:none;
-}
+/* EVENT DRAMA */
+.event-drama{display:none;position:fixed;inset:0;z-index:280;align-items:center;justify-content:center;pointer-events:none;}
 .event-drama.show{display:flex;}
 .event-drama-inner{text-align:center;animation:eventPop .4s cubic-bezier(.34,1.56,.64,1);}
-@keyframes eventPop{0%{transform:scale(0);opacity:0}70%{transform:scale(1.15)}100%{transform:scale(1);opacity:1}}
+@keyframes eventPop{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
 .event-drama-inner.exit{animation:eventExit .4s forwards;}
 @keyframes eventExit{to{transform:scale(1.5) rotate(10deg);opacity:0}}
 .event-drama-emoji{font-size:clamp(60px,15vw,100px);animation:emojiWiggle .3s infinite alternate;}
 @keyframes emojiWiggle{0%{transform:rotate(-8deg)}100%{transform:rotate(8deg)}}
-.event-drama-title{font-family:'Jua',sans-serif;font-size:clamp(36px,10vw,64px);color:#fff;text-shadow:0 4px 0 rgba(0,0,0,.4),0 0 50px currentColor;margin-top:12px;}
+.event-drama-title{font-family:'Jua',sans-serif;font-size:clamp(36px,10vw,64px);color:#fff;text-shadow:0 4px 0 rgba(0,0,0,.4);margin-top:12px;}
 .event-drama-sub{font-family:'Jua',sans-serif;font-size:clamp(16px,4vw,24px);color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.5);margin-top:8px;}
 .event-drama-bg{position:fixed;inset:0;z-index:-1;}
 
-/* Flash & particles */
 .flash-overlay{position:fixed;inset:0;z-index:200;pointer-events:none;opacity:0;transition:opacity .08s;}
 .flash-overlay.flash{opacity:.8;transition:none;}
 .cbox{position:fixed;inset:0;pointer-events:none;z-index:999;}
@@ -233,20 +197,6 @@ h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-
 @keyframes cpFall{0%{transform:translateY(-10px);opacity:1}100%{transform:translateY(105vh) rotate(800deg);opacity:0}}
 @keyframes pulseRing{0%,100%{transform:scale(1);opacity:.4}50%{transform:scale(1.18);opacity:.15}}
 
-/* Sparkle effect */
-.sparkle{position:fixed;pointer-events:none;z-index:210;}
-.sparkle-particle{
-  position:absolute;width:10px;height:10px;
-  background:radial-gradient(circle,#fff,#ffd700);
-  border-radius:50%;
-  animation:sparkleFly 1s ease-out forwards;
-}
-@keyframes sparkleFly{
-  0%{transform:translate(0,0) scale(1);opacity:1}
-  100%{transform:translate(var(--tx),var(--ty)) scale(0);opacity:0}
-}
-
-/* Connection status */
 .conn-status{position:fixed;top:10px;right:10px;padding:6px 12px;border-radius:20px;font-size:11px;font-family:'Jua',sans-serif;z-index:50;}
 .conn-status.online{background:#d4edda;color:#155724;}
 .conn-status.offline{background:#f8d7da;color:#721c24;}
@@ -255,24 +205,23 @@ h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-
 <body>
 
 <div class="conn-status online" id="connStatus">🟢 연결됨</div>
-
 <h1>🔑 동아의 디코드 찾기</h1>
 <p class="sub">비밀 코드를 찾아 먼저 골인하세요! 🎯</p>
 
-<!-- ── LOBBY SCREEN ── -->
+<!-- LOBBY -->
 <div id="lobbyScreen">
   <div class="lobby-panel">
     <div class="lobby-title">🎮 게임 참여하기</div>
     <input type="text" class="lobby-input" id="myNameInput" placeholder="내 이름 입력 (최대 6자)" maxlength="6">
-    <button class="btn-lobby" onclick="createRoom()" id="btnCreate">🎲 새 게임 만들기</button>
+    <button class="btn-lobby" onclick="createRoom()">🎲 새 게임 만들기</button>
     <div class="divider">또는</div>
     <input type="text" class="lobby-input room-code" id="roomCodeInput" placeholder="방 코드 입력" maxlength="6">
-    <button class="btn-lobby secondary" onclick="joinRoom()" id="btnJoin">🚪 게임 참여하기</button>
+    <button class="btn-lobby secondary" onclick="joinRoom()">🚪 게임 참여하기</button>
     <div class="error-msg" id="lobbyError"></div>
   </div>
 </div>
 
-<!-- ── WAITING ROOM ── -->
+<!-- WAITING -->
 <div id="waitingScreen" style="display:none;width:100%;max-width:500px;">
   <div class="lobby-panel">
     <div class="lobby-title">⏳ 대기실</div>
@@ -288,7 +237,7 @@ h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-
   </div>
 </div>
 
-<!-- ── PIECE SELECT SCREEN ── -->
+<!-- SETUP -->
 <div id="setupScreen">
   <div class="setup-panel">
     <div class="setup-title">🎯 내 말 선택하기</div>
@@ -298,48 +247,39 @@ h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-
   </div>
 </div>
 
-<!-- ── GAME SCREEN ── -->
+<!-- GAME -->
 <div id="gameScreen">
   <div class="game-header">
     <div class="game-room-code">방 코드: <span id="gameRoomCode">----</span></div>
     <button class="btn-leave" onclick="leaveRoom()">🚪 나가기</button>
   </div>
-
   <div class="game-layout">
     <div class="board-wrap">
       <svg id="boardSvg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"></svg>
     </div>
-
     <div class="right-col">
       <div class="panel">
         <div class="turn-txt" id="turnTxt">준비 중...</div>
-        <div id="throwArea">
-          <div class="yut-stage" id="yutStage">
-            <div class="throw-hint" id="throwHint">
-              <span style="font-size:28px">🎲</span>
-              꾹 눌러서 던지기!
-            </div>
-            <div class="power-bar-wrap"><div class="power-bar" id="powerBar"></div></div>
-          </div>
+        <div class="yut-stage" id="yutStage">
+          <div class="throw-hint" id="throwHint"><span style="font-size:28px">🎲</span>꾹 눌러서 던지기!</div>
+          <div class="power-bar-wrap"><div class="power-bar" id="powerBar"></div></div>
         </div>
         <div class="yut-result-sticks" id="stickDisplay"></div>
         <div class="yut-name-display" id="yutNameDisplay"></div>
       </div>
-
       <div class="winner-box" id="winnerBox">
         <h2>🏆 <span id="winnerName"></span><br>디코드 완료!</h2>
         <button class="btn-restart" onclick="restartGame()">🔄 다시 시작</button>
       </div>
     </div>
   </div>
-
   <div style="width:100%;max-width:1060px;margin-top:18px;">
     <div style="font-family:'Jua',sans-serif;font-size:15px;color:var(--wood-d);margin-bottom:10px;">👥 참여자 현황</div>
     <div class="player-list-bottom" id="playerListBottom"></div>
   </div>
 </div>
 
-<!-- Turn notification -->
+<!-- Turn notify -->
 <div class="turn-notify" id="turnNotify">
   <div class="turn-notify-inner">
     <div class="turn-notify-emoji" id="turnNotifyEmoji">🐥</div>
@@ -348,7 +288,7 @@ h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-
   </div>
 </div>
 
-<!-- Yut result drama -->
+<!-- Yut drama -->
 <div class="yut-drama" id="yutDrama">
   <div class="yut-drama-bg" id="yutDramaBg"></div>
   <div class="yut-drama-inner" id="yutDramaInner">
@@ -358,47 +298,39 @@ h1{font-family:'Jua',sans-serif;font-size:clamp(20px,4vw,34px);color:var(--wood-
   </div>
 </div>
 
-<!-- Event drama (catch, card, goal) -->
+<!-- Event drama -->
 <div class="event-drama" id="eventDrama">
   <div class="event-drama-bg" id="eventDramaBg"></div>
   <div class="event-drama-inner" id="eventDramaInner">
     <div class="event-drama-emoji" id="eventDramaEmoji">💥</div>
     <div class="event-drama-title" id="eventDramaTitle">잡았다!</div>
-    <div class="event-drama-sub" id="eventDramaSub">상대를 잡았어요!</div>
+    <div class="event-drama-sub" id="eventDramaSub"></div>
   </div>
 </div>
 
-<!-- Shortcut choice -->
+<!-- Shortcut -->
 <div class="shortcut-overlay" id="shortcutOverlay">
   <div class="shortcut-popup">
     <div class="shortcut-title">🛤️ 어느 길로 갈까요?</div>
     <div class="shortcut-btns">
-      <div class="shortcut-btn" onclick="chooseShortcut(false)">
-        <span class="path-icon">↗️</span>
-        바깥길
-      </div>
-      <div class="shortcut-btn" onclick="chooseShortcut(true)">
-        <span class="path-icon">⭐</span>
-        지름길
-      </div>
+      <div class="shortcut-btn" onclick="chooseShortcut(false)"><span class="path-icon">↗️</span>바깥길</div>
+      <div class="shortcut-btn" onclick="chooseShortcut(true)"><span class="path-icon">⭐</span>지름길</div>
     </div>
   </div>
 </div>
 
-<!-- Card overlay -->
+<!-- Card -->
 <div class="card-overlay" id="cardOverlay">
   <div class="card-popup">
     <div class="card-popup-title">🔮 미스터리 카드</div>
-    <div class="card-popup-sub" id="cardPopupSub">카드 3장 중 하나를 선택하세요!</div>
+    <div class="card-popup-sub" id="cardPopupSub">카드를 선택하세요!</div>
     <div class="card-choices" id="cardChoices"></div>
   </div>
 </div>
 
 <div class="cbox" id="cbox"></div>
 <div class="flash-overlay" id="flashOverlay"></div>
-<div class="sparkle" id="sparkle"></div>
 
-<!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 
@@ -415,7 +347,6 @@ const firebaseConfig = {
   messagingSenderId: "1022062510652",
   appId: "1:1022062510652:web:574dfb851730c167137939"
 };
-
 firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
@@ -423,52 +354,60 @@ const db = firebase.database();
 // PIECE DEFINITIONS
 // ═══════════════════════════════════════
 const PIECE_DEFS = [
-  {id:'chick',  emoji:'🐥', name:'병아리', color:'#f5c000', colorLight:'#fff3a0', colorDark:'#a07800'},
-  {id:'rabbit', emoji:'🐰', name:'토끼',   color:'#e040a0', colorLight:'#ffc0e8', colorDark:'#880060'},
-  {id:'horse',  emoji:'🐴', name:'말',     color:'#5b6abf', colorLight:'#c0c8ff', colorDark:'#202870'},
-  {id:'pig',    emoji:'🐷', name:'돼지',   color:'#e8534a', colorLight:'#ffc0bc', colorDark:'#900020'},
-  {id:'monkey', emoji:'🐵', name:'원숭이', color:'#e67e22', colorLight:'#ffd8a0', colorDark:'#883000'},
-  {id:'snake',  emoji:'🐍', name:'뱀',     color:'#27ae60', colorLight:'#a0ffc0', colorDark:'#0a5a28'},
+  {id:'chick',emoji:'🐥',name:'병아리',color:'#f5c000'},
+  {id:'rabbit',emoji:'🐰',name:'토끼',color:'#e040a0'},
+  {id:'horse',emoji:'🐴',name:'말',color:'#5b6abf'},
+  {id:'pig',emoji:'🐷',name:'돼지',color:'#e8534a'},
+  {id:'monkey',emoji:'🐵',name:'원숭이',color:'#e67e22'},
+  {id:'snake',emoji:'🐍',name:'뱀',color:'#27ae60'},
 ];
 
 // ═══════════════════════════════════════
-// BOARD GEOMETRY WITH SHORTCUTS
+// BOARD - 윷놀이 정확한 구조
+// 바깥길: 0→1→2→3→4→5→6→7→8→9→10→11→12→13→14→15→16→17→18→19→0(골인)
+// 지름길1 (5에서): 5→29→22→28→15 (동→서)
+// 지름길2 (10에서): 10→26→22→24→0 (북→출발)
+// 지름길3 (15에서): 15→24→22→29→5... 또는 15→24→22→28→15... 
+// 중앙: 22
 // ═══════════════════════════════════════
 const W=500,H=500,PAD=52,CX=250,CY=250;
 const OUTER=[];
-(function(){
-  for(let i=0;i<20;i++){
-    const side=Math.floor(i/5),t=(i%5)/4;
-    const L=PAD,R=W-PAD,T=PAD,B=H-PAD;
-    let x,y;
-    if(side===0){x=R;y=B-t*(B-T);}
-    else if(side===1){x=R-t*(R-L);y=T;}
-    else if(side===2){x=L;y=T+t*(B-T);}
-    else{x=L+t*(R-L);y=B;}
-    OUTER.push({x,y});
-  }
-})();
-const INNER={
-  20:{x:CX,y:CY},         // 중앙
-  21:{x:(W-PAD+CX)/2,y:(H-PAD+CY)/2},  // 우하 대각
-  22:{x:(PAD+CX)/2,y:(H-PAD+CY)/2},    // 좌하 대각
-  23:{x:(PAD+CX)/2,y:(PAD+CY)/2},      // 좌상 대각
-  24:{x:(W-PAD+CX)/2,y:(PAD+CY)/2},    // 우상 대각
-};
-function nodeXY(n){return n<20?OUTER[n]:INNER[n]||{x:CX,y:CY};}
+for(let i=0;i<20;i++){
+  const side=Math.floor(i/5),t=(i%5)/4;
+  const L=PAD,R=W-PAD,T=PAD,B=H-PAD;
+  let x,y;
+  if(side===0){x=R;y=B-t*(B-T);}
+  else if(side===1){x=R-t*(R-L);y=T;}
+  else if(side===2){x=L;y=T+t*(B-T);}
+  else{x=L+t*(R-L);y=B;}
+  OUTER.push({x,y});
+}
 
-// 지름길 경로 정의
-// 동(5) → 21 → 20 → 22 → 15(서) 또는 23 → 10(북)
-// 북(10) → 23 → 20 → 24 → 5(동) 또는 22 → 15(서)  
-// 서(15) → 22 → 20 → 24 → 5(동) 또는 21 → 0(출발)
-const SHORTCUT_PATHS = {
-  5:  { outer: [6,7,8,9,10], inner: [21,20,22,15] },   // 동 → 서
-  10: { outer: [11,12,13,14,15], inner: [23,20,22,15] }, // 북 → 서  
-  15: { outer: [16,17,18,19,0], inner: [22,20,21,0] },  // 서 → 출발
+// 내부 노드 (지름길)
+const INNER_NODES = {
+  22: {x:CX, y:CY},          // 중앙
+  24: {x:(PAD+CX)/2, y:(H-PAD+CY)/2},    // 좌하 (15→0 경로)
+  26: {x:(PAD+CX)/2, y:(PAD+CY)/2},      // 좌상 (10→중앙 경로)
+  28: {x:(W-PAD+CX)/2, y:(H-PAD+CY)/2},  // 우하 (중앙→15 경로)
+  29: {x:(W-PAD+CX)/2, y:(PAD+CY)/2},    // 우상 (5→중앙 경로)
 };
 
-const CARD_NODES = new Set([20,3,12,18]);
-const CORNER_NODES = new Set([0,5,10,15]);
+function getNodeXY(node) {
+  if(node < 20) return OUTER[node];
+  return INNER_NODES[node] || {x:CX, y:CY};
+}
+
+// 경로 정의
+// 바깥길 전체
+const OUTER_PATH = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]; // 20이면 골인
+
+// 지름길 경로들
+const SHORTCUT_FROM_5 = [5, 29, 22, 28, 15];  // 동에서 서로
+const SHORTCUT_FROM_10 = [10, 26, 22, 24, 0]; // 북에서 출발점으로 (골인 가능)
+const SHORTCUT_FROM_15 = [15, 24, 22, 29, 5]; // 서에서 동으로
+
+const CARD_NODES = new Set([22, 3, 12, 18]); // 중앙, 3번, 12번, 18번
+const SHORTCUT_CORNERS = new Set([5, 10, 15]); // 지름길 선택 가능한 코너
 
 // ═══════════════════════════════════════
 // GAME STATE
@@ -481,70 +420,48 @@ let roomRef = null;
 let gameState = null;
 let selectedPiece = null;
 let localListeners = [];
-let pendingShortcutChoice = null;
-let animatingMove = false;
+let lastEventId = null;
+let pendingShortcutData = null;
 
 // ═══════════════════════════════════════
-// UTILITY
+// UTILITIES
 // ═══════════════════════════════════════
 function generateRoomCode() {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   let code = '';
-  for(let i=0; i<4; i++) code += chars[Math.floor(Math.random()*chars.length)];
+  for(let i=0;i<4;i++) code += chars[Math.floor(Math.random()*chars.length)];
   return code;
 }
-
 function generatePlayerId() {
   return 'p_' + Date.now() + '_' + Math.random().toString(36).substr(2,5);
 }
-
 function showScreen(screenId) {
   ['lobbyScreen','waitingScreen','setupScreen','gameScreen'].forEach(id => {
     document.getElementById(id).style.display = id===screenId ? 'block' : 'none';
   });
 }
-
 function showError(msg) {
   document.getElementById('lobbyError').textContent = msg;
   setTimeout(() => document.getElementById('lobbyError').textContent = '', 3000);
 }
 
-// ═══════════════════════════════════════
-// CONNECTION STATUS
-// ═══════════════════════════════════════
+// Connection
 db.ref('.info/connected').on('value', snap => {
   const el = document.getElementById('connStatus');
-  if(snap.val()) {
-    el.className = 'conn-status online';
-    el.textContent = '🟢 연결됨';
-  } else {
-    el.className = 'conn-status offline';
-    el.textContent = '🔴 연결 끊김';
-  }
+  el.className = snap.val() ? 'conn-status online' : 'conn-status offline';
+  el.textContent = snap.val() ? '🟢 연결됨' : '🔴 연결 끊김';
 });
 
 // ═══════════════════════════════════════
-// TURN NOTIFICATION
-// ═══════════════════════════════════════
-function showTurnNotify(player, piece) {
-  const el = document.getElementById('turnNotify');
-  document.getElementById('turnNotifyEmoji').textContent = piece?.emoji || '🎲';
-  document.getElementById('turnNotifyText').textContent = `${player?.name || '???'} 님 차례!`;
-
-  el.classList.add('show');
-  setTimeout(() => el.classList.remove('show'), 1800);
-}
-
-// ═══════════════════════════════════════
-// YUT RESULT DRAMA
+// DRAMA EFFECTS (모든 플레이어에게 표시)
 // ═══════════════════════════════════════
 const YUT_COLORS = {
-  '백도': { bg: 'linear-gradient(135deg,#636e72,#2d3436)', color: '#aaa' },
-  '도': { bg: 'linear-gradient(135deg,#74b9ff,#0984e3)', color: '#fff' },
-  '개': { bg: 'linear-gradient(135deg,#55efc4,#00b894)', color: '#fff' },
-  '걸': { bg: 'linear-gradient(135deg,#ffeaa7,#fdcb6e)', color: '#7a4800' },
-  '윷': { bg: 'linear-gradient(135deg,#ff7675,#d63031)', color: '#fff' },
-  '모': { bg: 'linear-gradient(135deg,#e17055,#d63031,#fdcb6e)', color: '#fff' },
+  '백도': {bg:'linear-gradient(135deg,#636e72,#2d3436)',color:'#aaa'},
+  '도': {bg:'linear-gradient(135deg,#74b9ff,#0984e3)',color:'#fff'},
+  '개': {bg:'linear-gradient(135deg,#55efc4,#00b894)',color:'#fff'},
+  '걸': {bg:'linear-gradient(135deg,#ffeaa7,#fdcb6e)',color:'#7a4800'},
+  '윷': {bg:'linear-gradient(135deg,#ff7675,#d63031)',color:'#fff'},
+  '모': {bg:'linear-gradient(135deg,#e17055,#d63031,#fdcb6e)',color:'#fff'},
 };
 
 function showYutDrama(outcome, duration=2200) {
@@ -560,24 +477,15 @@ function showYutDrama(outcome, duration=2200) {
   nameEl.style.color = colors.color;
   descEl.style.color = colors.color;
   nameEl.textContent = outcome.name + (outcome.bonus ? '!' : '');
-  descEl.textContent = outcome.kor;
+  descEl.textContent = outcome.desc;
 
-  // Sticks
   sticksEl.innerHTML = outcome.sticks.map((flat, i) => {
     const isBaek = outcome.baek && i === 0;
     if(isBaek) return '<div class="yut-drama-stick baek"></div>';
     return `<div class="yut-drama-stick ${flat?'flat':'round'}"></div>`;
   }).join('');
 
-  // Flash
-  const flash = document.getElementById('flashOverlay');
-  flash.style.background = colors.bg;
-  flash.classList.add('flash');
-  setTimeout(() => flash.classList.remove('flash'), 150);
-
-  // Sparkles
-  createSparkles(50);
-
+  flash(colors.bg);
   inner.classList.remove('exit');
   drama.classList.add('show');
 
@@ -590,19 +498,17 @@ function showYutDrama(outcome, duration=2200) {
   }, duration);
 }
 
-// ═══════════════════════════════════════
-// EVENT DRAMA (catch, card, goal)
-// ═══════════════════════════════════════
 const EVENT_PRESETS = {
-  catch: { emoji: '💥', title: '잡았다!', bg: 'linear-gradient(135deg,#e74c3c,#c0392b)', color: '#fff' },
-  card: { emoji: '🔮', title: '미스터리 카드!', bg: 'linear-gradient(135deg,#6c5ce7,#a29bfe)', color: '#fff' },
-  goal: { emoji: '🏆', title: '골인!!!', bg: 'linear-gradient(135deg,#f9ca24,#f39c12)', color: '#7a4800' },
-  bonus: { emoji: '🎉', title: '한번 더!', bg: 'linear-gradient(135deg,#fd79a8,#e84393)', color: '#fff' },
+  catch: {emoji:'💥',title:'잡았다!',bg:'linear-gradient(135deg,#e74c3c,#c0392b)',color:'#fff'},
+  card: {emoji:'🔮',title:'미스터리 카드!',bg:'linear-gradient(135deg,#6c5ce7,#a29bfe)',color:'#fff'},
+  goal: {emoji:'🏆',title:'골인!!!',bg:'linear-gradient(135deg,#f9ca24,#f39c12)',color:'#7a4800'},
+  bonus: {emoji:'🎉',title:'한번 더!',bg:'linear-gradient(135deg,#fd79a8,#e84393)',color:'#fff'},
+  turn: {emoji:'🎲',title:'',bg:'linear-gradient(135deg,#74b9ff,#0984e3)',color:'#fff'},
 };
 
-function showEventDrama(type, subText, duration=2000) {
+function showEventDrama(type, subText, duration=1800) {
   const preset = EVENT_PRESETS[type];
-  if (!preset) return;
+  if(!preset) return;
 
   const drama = document.getElementById('eventDrama');
   const inner = document.getElementById('eventDramaInner');
@@ -615,14 +521,7 @@ function showEventDrama(type, subText, duration=2000) {
   document.getElementById('eventDramaSub').textContent = subText || '';
   document.getElementById('eventDramaSub').style.color = preset.color;
 
-  // Flash
-  const flash = document.getElementById('flashOverlay');
-  flash.style.background = preset.bg;
-  flash.classList.add('flash');
-  setTimeout(() => flash.classList.remove('flash'), 150);
-
-  createSparkles(40);
-
+  flash(preset.bg);
   inner.classList.remove('exit');
   drama.classList.add('show');
 
@@ -635,36 +534,26 @@ function showEventDrama(type, subText, duration=2000) {
   }, duration);
 }
 
-// ═══════════════════════════════════════
-// SPARKLE EFFECTS
-// ═══════════════════════════════════════
-function createSparkles(count=30) {
-  const el = document.getElementById('sparkle');
-  el.innerHTML = '';
-  for(let i=0; i<count; i++) {
-    const p = document.createElement('div');
-    p.className = 'sparkle-particle';
-    const angle = Math.random() * Math.PI * 2;
-    const dist = 100 + Math.random() * 200;
-    p.style.cssText = `
-      left: 50%; top: 50%;
-      --tx: ${Math.cos(angle)*dist}px;
-      --ty: ${Math.sin(angle)*dist}px;
-      animation-delay: ${Math.random()*0.3}s;
-      background: ${['#ffd700','#fff','#ff6b6b','#4ecdc4','#a29bfe'][Math.floor(Math.random()*5)]};
-    `;
-    el.appendChild(p);
-    setTimeout(() => p.remove(), 1200);
-  }
+function showTurnNotify(playerName, emoji) {
+  document.getElementById('turnNotifyEmoji').textContent = emoji || '🎲';
+  document.getElementById('turnNotifyText').textContent = `${playerName} 님 차례!`;
+
+  const el = document.getElementById('turnNotify');
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 1800);
 }
 
-// ═══════════════════════════════════════
-// CONFETTI
-// ═══════════════════════════════════════
+function flash(bg) {
+  const el = document.getElementById('flashOverlay');
+  el.style.background = bg;
+  el.classList.add('flash');
+  setTimeout(() => el.classList.remove('flash'), 150);
+}
+
 function confetti() {
   const box = document.getElementById('cbox');
   const colors = ['#f5c842','#e8534a','#4caf6e','#4a8fd9','#9b59b6','#e67e22'];
-  for(let i=0; i<100; i++) {
+  for(let i=0;i<100;i++) {
     const d = document.createElement('div');
     d.className = 'cp';
     const s = 6+Math.random()*12;
@@ -675,7 +564,7 @@ function confetti() {
 }
 
 // ═══════════════════════════════════════
-// LOBBY - CREATE/JOIN ROOM
+// LOBBY
 // ═══════════════════════════════════════
 async function createRoom() {
   myName = document.getElementById('myNameInput').value.trim();
@@ -688,36 +577,31 @@ async function createRoom() {
 
   roomRef = db.ref('rooms/' + currentRoomCode);
 
-  const snapshot = await roomRef.once('value');
-  if(snapshot.exists()) {
-    currentRoomCode = generateRoomCode();
-    roomRef = db.ref('rooms/' + currentRoomCode);
-  }
-
   await roomRef.set({
     host: myPlayerId,
     status: 'waiting',
     players: {
       [myPlayerId]: {
         name: myName,
-        joinedAt: Date.now(),
         pieceId: null,
         ready: false,
-        position: { node: 0, path: 'outer' },
+        path: [], // 현재 이동 경로
+        pathIndex: 0, // 경로 상 현재 위치
         finished: false
       }
     },
     gameData: {
       turnPlayerId: null,
-      lastAction: null,
+      turnOrder: [],
+      currentEvent: null, // 모든 플레이어에게 보여줄 이벤트
       pendingBonus: false,
-      cardData: null
+      cardData: null,
+      shortcutData: null
     },
     createdAt: firebase.database.ServerValue.TIMESTAMP
   });
 
   roomRef.onDisconnect().remove();
-
   setupRoomListeners();
   showScreen('waitingScreen');
   document.getElementById('displayRoomCode').textContent = currentRoomCode;
@@ -747,25 +631,27 @@ async function joinRoom() {
 
   await roomRef.child('players/' + myPlayerId).set({
     name: myName,
-    joinedAt: firebase.database.ServerValue.TIMESTAMP,
     pieceId: null,
     ready: false,
-    position: { node: 0, path: 'outer' },
+    path: [],
+    pathIndex: 0,
     finished: false
   });
 
   roomRef.child('players/' + myPlayerId).onDisconnect().remove();
-
   setupRoomListeners();
   showScreen('waitingScreen');
   document.getElementById('displayRoomCode').textContent = currentRoomCode;
 }
 
+function copyRoomCode() {
+  navigator.clipboard.writeText(currentRoomCode);
+  alert('방 코드가 복사되었습니다: ' + currentRoomCode);
+}
+
 // ═══════════════════════════════════════
 // ROOM LISTENERS
 // ═══════════════════════════════════════
-let lastTurnPlayerId = null;
-
 function setupRoomListeners() {
   localListeners.forEach(l => l());
   localListeners = [];
@@ -777,21 +663,42 @@ function setupRoomListeners() {
       return;
     }
 
-    const prevState = gameState;
     gameState = snapshot.val();
 
-    // Check for turn change
+    // 이벤트 처리 (모든 플레이어에게 동일하게)
     const gd = gameState.gameData || {};
-    if(gameState.status === 'playing' && gd.turnPlayerId && gd.turnPlayerId !== lastTurnPlayerId) {
-      const player = gameState.players[gd.turnPlayerId];
-      const piece = PIECE_DEFS.find(d => d.id === player?.pieceId);
-      showTurnNotify(player, piece);
-      lastTurnPlayerId = gd.turnPlayerId;
+    if(gd.currentEvent && gd.currentEvent.id !== lastEventId) {
+      lastEventId = gd.currentEvent.id;
+      handleEvent(gd.currentEvent);
     }
 
     updateUI();
   });
   localListeners.push(() => roomRef.off('value', roomListener));
+}
+
+function handleEvent(event) {
+  switch(event.type) {
+    case 'turn':
+      showTurnNotify(event.playerName, event.emoji);
+      break;
+    case 'yut':
+      showYutDrama(event.outcome, 2000);
+      break;
+    case 'catch':
+      showEventDrama('catch', event.text, 1800);
+      break;
+    case 'card':
+      showEventDrama('card', event.text, 1500);
+      break;
+    case 'bonus':
+      showEventDrama('bonus', event.text, 1500);
+      break;
+    case 'goal':
+      showEventDrama('goal', event.text, 2500);
+      confetti();
+      break;
+  }
 }
 
 function updateUI() {
@@ -818,10 +725,9 @@ function renderWaitingRoom() {
   showScreen('waitingScreen');
 
   const players = gameState.players || {};
-  const playerList = document.getElementById('waitingPlayerList');
   const playerArr = Object.entries(players);
 
-  playerList.innerHTML = playerArr.map(([pid, p]) => `
+  document.getElementById('waitingPlayerList').innerHTML = playerArr.map(([pid, p]) => `
     <div class="player-wait-item ${pid===myPlayerId?'me':''}">
       <span class="pwi-emoji">👤</span>
       <span class="pwi-name">${p.name}${pid===myPlayerId?' (나)':''}</span>
@@ -836,11 +742,6 @@ function renderWaitingRoom() {
   const startBtn = document.getElementById('btnStartGame');
   startBtn.disabled = !isHost || count < 2;
   startBtn.textContent = isHost ? '🔑 게임 시작!' : '방장이 시작할 때까지 대기 중...';
-}
-
-function copyRoomCode() {
-  navigator.clipboard.writeText(currentRoomCode);
-  alert('방 코드가 복사되었습니다: ' + currentRoomCode);
 }
 
 async function startGameAsHost() {
@@ -859,8 +760,7 @@ function renderPieceSelection() {
   const myData = players[myPlayerId];
   const myPiece = myData?.pieceId;
 
-  const grid = document.getElementById('pieceGrid');
-  grid.innerHTML = PIECE_DEFS.map(p => {
+  document.getElementById('pieceGrid').innerHTML = PIECE_DEFS.map(p => {
     const taken = takenPieces.has(p.id) && p.id !== myPiece;
     const selected = p.id === selectedPiece || p.id === myPiece;
     return `
@@ -870,8 +770,7 @@ function renderPieceSelection() {
       </div>`;
   }).join('');
 
-  const slots = document.getElementById('playerSlots');
-  slots.innerHTML = Object.entries(players).map(([pid, p]) => {
+  document.getElementById('playerSlots').innerHTML = Object.entries(players).map(([pid, p]) => {
     const piece = PIECE_DEFS.find(d => d.id === p.pieceId);
     return `
       <div class="slot ${pid===myPlayerId?'me':''}">
@@ -912,7 +811,6 @@ function selectPieceLocal(pieceId) {
 
 async function confirmPiece() {
   if(!selectedPiece) return;
-
   await roomRef.child('players/' + myPlayerId).update({
     pieceId: selectedPiece,
     ready: true
@@ -922,10 +820,19 @@ async function confirmPiece() {
 async function startPlaying() {
   const players = gameState.players || {};
   const playerIds = Object.keys(players);
+  const firstPlayer = players[playerIds[0]];
+  const firstPiece = PIECE_DEFS.find(d => d.id === firstPlayer?.pieceId);
 
   await roomRef.update({
     status: 'playing',
-    'gameData/turnPlayerId': playerIds[0]
+    'gameData/turnPlayerId': playerIds[0],
+    'gameData/turnOrder': playerIds,
+    'gameData/currentEvent': {
+      id: Date.now(),
+      type: 'turn',
+      playerName: firstPlayer?.name,
+      emoji: firstPiece?.emoji
+    }
   });
 }
 
@@ -941,26 +848,32 @@ function renderGame() {
   const turnPlayer = players[turnPlayerId];
   const turnPiece = PIECE_DEFS.find(d => d.id === turnPlayer?.pieceId);
   document.getElementById('turnTxt').innerHTML = turnPlayer 
-    ? `<span class="turn-name">${turnPiece?.emoji||''} ${turnPlayer.name}</span>${turnPlayerId===myPlayerId?' (내 차례!)':' 님의 차례'}`
+    ? `<span class="turn-name">${turnPiece?.emoji||''} ${turnPlayer.name}</span>${isMyTurn?' (내 차례!)':' 님의 차례'}`
     : '준비 중...';
 
   const yutStage = document.getElementById('yutStage');
-  if(isMyTurn && gameState.status === 'playing' && !animatingMove) {
+  const canThrow = isMyTurn && gameState.status === 'playing' && !gd.shortcutData && !gd.cardData;
+
+  if(canThrow) {
     yutStage.classList.remove('disabled');
-    yutStage.onmousedown = e => startCharge(e);
-    yutStage.ontouchstart = e => startCharge(e);
-    yutStage.onmouseup = () => throwYut();
-    yutStage.ontouchend = () => throwYut();
-    yutStage.onmouseleave = () => cancelCharge();
+    yutStage.onmousedown = startCharge;
+    yutStage.ontouchstart = startCharge;
+    yutStage.onmouseup = throwYut;
+    yutStage.ontouchend = throwYut;
+    yutStage.onmouseleave = cancelCharge;
   } else {
     yutStage.classList.add('disabled');
     yutStage.onmousedown = null;
-    yutStage.ontouchstart = null;
-    yutStage.onmouseup = null;
-    yutStage.ontouchend = null;
   }
 
-  // Card overlay
+  // Shortcut choice
+  if(gd.shortcutData && gd.shortcutData.playerId === myPlayerId) {
+    document.getElementById('shortcutOverlay').classList.add('show');
+  } else {
+    document.getElementById('shortcutOverlay').classList.remove('show');
+  }
+
+  // Card choice
   if(gd.cardData && gd.cardData.playerId === myPlayerId && !gd.cardData.chosen) {
     showCardOverlay(gd.cardData);
   } else {
@@ -973,7 +886,6 @@ function renderGame() {
     const winPiece = PIECE_DEFS.find(d => d.id === winner?.pieceId);
     document.getElementById('winnerName').textContent = (winPiece?.emoji||'') + ' ' + (winner?.name||'');
     document.getElementById('winnerBox').classList.add('show');
-    confetti();
   } else {
     document.getElementById('winnerBox').classList.remove('show');
   }
@@ -983,7 +895,7 @@ function renderGame() {
 }
 
 // ═══════════════════════════════════════
-// YUT THROWING
+// YUT THROWING - 정확한 윷 규칙
 // ═══════════════════════════════════════
 let chargeInterval = null;
 let chargeLevel = 0;
@@ -991,7 +903,7 @@ let throwing = false;
 
 function startCharge(e) {
   if(e) e.preventDefault();
-  if(throwing || animatingMove) return;
+  if(throwing) return;
 
   chargeLevel = 0;
   const t0 = Date.now();
@@ -1014,303 +926,299 @@ function cancelCharge() {
   document.getElementById('throwHint').style.display = 'flex';
 }
 
-async function throwYut() {
-  if(!chargeInterval || throwing || animatingMove) return;
-  clearInterval(chargeInterval);
-  chargeInterval = null;
-  throwing = true;
-
-  document.getElementById('powerBar').style.width = '0%';
-
-  const outcome = rollOutcome();
-
-  // Show dramatic result first
-  showYutDrama(outcome, 2000);
-
-  // Wait for drama, then process
-  setTimeout(async () => {
-    await processMove(outcome);
-    throwing = false;
-  }, 2200);
-}
-
+// 윷 결과 - 정확한 규칙
+// 도: 1칸 (윷 1개 뒤집힘 - 등 1개)
+// 개: 2칸 (윷 2개 뒤집힘 - 등 2개)
+// 걸: 3칸 (윷 3개 뒤집힘 - 등 3개)
+// 윷: 4칸 + 한번 더 (모두 등 - 4개 다 뒤집힘)
+// 모: 5칸 + 한번 더 (모두 배 - 0개 뒤집힘)
+// 백도: -1칸 (1개만 뒤집히는데 그게 백도 표시된 것)
 const YUT_OUTCOMES = [
-  {name:'백도', kor:'1칸 뒤로!', steps:-1, bonus:false, sticks:[true,false,false,false], baek:true},
-  {name:'도',   kor:'1칸 전진!', steps:1, bonus:false, sticks:[true,false,false,false]},
-  {name:'개',   kor:'2칸 전진!', steps:2, bonus:false, sticks:[true,true,false,false]},
-  {name:'걸',   kor:'3칸 전진!', steps:3, bonus:false, sticks:[true,true,true,false]},
-  {name:'윷',   kor:'4칸 + 한번 더!', steps:4, bonus:true, sticks:[false,false,false,false]},
-  {name:'모',   kor:'5칸 + 한번 더!', steps:5, bonus:true, sticks:[true,true,true,true]},
+  {name:'백도', desc:'-1칸 후퇴', steps:-1, bonus:false, sticks:[true,false,false,false], baek:true},
+  {name:'도', desc:'1칸 전진', steps:1, bonus:false, sticks:[true,false,false,false]},
+  {name:'개', desc:'2칸 전진', steps:2, bonus:false, sticks:[true,true,false,false]},
+  {name:'걸', desc:'3칸 전진', steps:3, bonus:false, sticks:[true,true,true,false]},
+  {name:'윷', desc:'4칸 + 한번 더!', steps:4, bonus:true, sticks:[true,true,true,true]},
+  {name:'모', desc:'5칸 + 한번 더!', steps:5, bonus:true, sticks:[false,false,false,false]},
 ];
-const YUT_W = [5,25,25,22,12,11];
+// 확률: 백도 3%, 도 22%, 개 30%, 걸 28%, 윷 10%, 모 7%
+const YUT_WEIGHTS = [3, 22, 30, 28, 10, 7];
 
 function rollOutcome() {
-  const total = YUT_W.reduce((a,b)=>a+b,0);
-  let r = Math.random()*total;
-  for(let i=0; i<YUT_W.length; i++) {
-    r -= YUT_W[i];
+  const total = YUT_WEIGHTS.reduce((a,b)=>a+b, 0);
+  let r = Math.random() * total;
+  for(let i=0; i<YUT_WEIGHTS.length; i++) {
+    r -= YUT_WEIGHTS[i];
     if(r <= 0) return YUT_OUTCOMES[i];
   }
   return YUT_OUTCOMES[1];
 }
 
+async function throwYut() {
+  if(!chargeInterval || throwing) return;
+  clearInterval(chargeInterval);
+  chargeInterval = null;
+  throwing = true;
+  document.getElementById('powerBar').style.width = '0%';
+
+  const outcome = rollOutcome();
+
+  // 모든 플레이어에게 윷 결과 표시
+  await roomRef.child('gameData/currentEvent').set({
+    id: Date.now(),
+    type: 'yut',
+    outcome: outcome
+  });
+
+  // 결과 처리는 약간의 딜레이 후
+  setTimeout(() => processYutResult(outcome), 2300);
+}
+
 // ═══════════════════════════════════════
-// MOVE PROCESSING WITH ANIMATION
+// MOVE LOGIC - 정확한 이동 처리
 // ═══════════════════════════════════════
-async function processMove(outcome) {
+async function processYutResult(outcome) {
   const players = gameState.players || {};
   const myData = players[myPlayerId];
-  const pos = myData.position || { node: 0, path: 'outer' };
 
-  // Calculate path and new position
-  const moveResult = calculateMove(pos, outcome.steps);
+  // 현재 위치 확인
+  let currentPath = myData.path || [];
+  let currentIndex = myData.pathIndex || 0;
 
-  // Check if shortcut choice needed
-  if(moveResult.needsShortcutChoice) {
-    pendingShortcutChoice = { outcome, moveResult };
-    document.getElementById('shortcutOverlay').classList.add('show');
+  // 아직 출발 안 한 경우
+  if(currentPath.length === 0) {
+    currentPath = [...OUTER_PATH];
+    currentIndex = 0;
+  }
+
+  const steps = outcome.steps;
+
+  // 백도(뒤로 가기) 처리
+  if(steps < 0) {
+    currentIndex = Math.max(0, currentIndex + steps);
+    await applyMove(currentPath, currentIndex, outcome.bonus, []);
+    throwing = false;
     return;
   }
 
-  await executeMove(outcome, moveResult);
-}
+  // 앞으로 이동
+  let newIndex = currentIndex + steps;
 
-function calculateMove(pos, steps) {
-  let currentNode = pos.node;
-  let path = pos.path || 'outer';
-  let needsShortcutChoice = false;
-  let passedCorner = null;
+  // 현재 위치가 코너인지 확인 (지름길 선택 가능)
+  const currentNode = currentPath[currentIndex];
+  const isOnOuterPath = OUTER_PATH.includes(currentNode);
+  const landingNode = currentPath[Math.min(newIndex, currentPath.length - 1)];
 
-  if(steps < 0) {
-    // Backward movement
-    if(path === 'outer') {
-      currentNode = Math.max(0, currentNode + steps);
-    } else {
-      currentNode = Math.max(0, currentNode + steps);
-    }
-    return { node: currentNode, path, finished: false, pathNodes: [currentNode] };
+  // 새 위치가 코너에 정확히 도착하는 경우 지름길 선택
+  if(isOnOuterPath && SHORTCUT_CORNERS.has(landingNode) && newIndex < currentPath.length) {
+    // 지름길 선택 UI 표시
+    pendingShortcutData = { outcome, currentPath, newIndex };
+    await roomRef.child('gameData/shortcutData').set({
+      playerId: myPlayerId,
+      corner: landingNode
+    });
+    throwing = false;
+    return;
   }
 
-  // Forward movement
-  const pathNodes = [currentNode];
-
-  for(let i=0; i<steps; i++) {
-    if(path === 'outer') {
-      currentNode++;
-      if(currentNode >= 20) {
-        return { node: 0, path: 'outer', finished: true, pathNodes };
-      }
-      pathNodes.push(currentNode);
-
-      // Check if landing on corner (shortcut available)
-      if(i === steps - 1 && CORNER_NODES.has(currentNode) && currentNode !== 0) {
-        needsShortcutChoice = true;
-        passedCorner = currentNode;
-      }
-    } else {
-      // Inner path logic (simplified)
-      currentNode++;
-      if(currentNode >= 20) {
-        return { node: 0, path: 'outer', finished: true, pathNodes };
-      }
-      pathNodes.push(currentNode);
-    }
+  // 골인 체크
+  if(newIndex >= currentPath.length) {
+    // 정확히 또는 넘어서 도착 = 골인
+    await handleGoal(outcome.bonus);
+    throwing = false;
+    return;
   }
 
-  return { node: currentNode, path, finished: false, needsShortcutChoice, passedCorner, pathNodes };
+  await applyMove(currentPath, newIndex, outcome.bonus, []);
+  throwing = false;
 }
 
 async function chooseShortcut(takeShortcut) {
   document.getElementById('shortcutOverlay').classList.remove('show');
 
-  if(!pendingShortcutChoice) return;
+  const gd = gameState.gameData || {};
+  const corner = gd.shortcutData?.corner;
 
-  const { outcome, moveResult } = pendingShortcutChoice;
-  moveResult.takeShortcut = takeShortcut;
-  moveResult.needsShortcutChoice = false;
+  let newPath, newIndex;
 
   if(takeShortcut) {
-    moveResult.path = 'inner';
+    // 지름길 선택
+    if(corner === 5) {
+      newPath = [...SHORTCUT_FROM_5];
+      newIndex = 0;
+    } else if(corner === 10) {
+      newPath = [...SHORTCUT_FROM_10];
+      newIndex = 0;
+    } else if(corner === 15) {
+      newPath = [...SHORTCUT_FROM_15];
+      newIndex = 0;
+    }
+  } else {
+    // 바깥길 유지
+    const players = gameState.players || {};
+    const myData = players[myPlayerId];
+    newPath = myData.path || [...OUTER_PATH];
+    newIndex = pendingShortcutData?.newIndex || 0;
   }
 
-  pendingShortcutChoice = null;
-  await executeMove(outcome, moveResult);
+  await roomRef.child('gameData/shortcutData').remove();
+
+  const outcome = pendingShortcutData?.outcome;
+  pendingShortcutData = null;
+
+  await applyMove(newPath, newIndex, outcome?.bonus || false, []);
 }
 
-async function executeMove(outcome, moveResult) {
+async function applyMove(path, index, isBonus, caught) {
   const players = gameState.players || {};
-  const myData = players[myPlayerId];
+  const currentNode = path[index];
 
-  animatingMove = true;
-
-  // Animate piece movement
-  await animatePieceAlongPath(myData, moveResult.pathNodes);
-
-  const newNode = moveResult.node;
-  const finished = moveResult.finished;
-
-  // Check catch
-  const caught = [];
-  if(!finished && newNode !== 0) {
+  // 잡기 체크
+  const caughtPlayers = [];
+  if(currentNode !== 0) { // 출발점은 안전
     Object.entries(players).forEach(([pid, p]) => {
       if(pid === myPlayerId || p.finished) return;
-      const pNode = p.position?.node || 0;
-      if(pNode === newNode) {
-        caught.push({pid, name: p.name, pieceId: p.pieceId});
+      const pPath = p.path || [];
+      const pIndex = p.pathIndex || 0;
+      const pNode = pPath[pIndex];
+      if(pNode === currentNode) {
+        caughtPlayers.push({ pid, name: p.name, pieceId: p.pieceId });
       }
     });
   }
 
-  // Check card node
-  const isCardNode = !finished && CARD_NODES.has(newNode);
+  // 카드 노드 체크
+  const isCardNode = CARD_NODES.has(currentNode);
 
-  // Build updates
+  // Firebase 업데이트
   const updates = {};
-  updates[`players/${myPlayerId}/position`] = { node: newNode, path: moveResult.path };
-  updates[`players/${myPlayerId}/finished`] = finished;
+  updates[`players/${myPlayerId}/path`] = path;
+  updates[`players/${myPlayerId}/pathIndex`] = index;
 
-  caught.forEach(c => {
-    updates[`players/${c.pid}/position`] = { node: 0, path: 'outer' };
+  // 잡힌 말들 초기화
+  caughtPlayers.forEach(c => {
+    updates[`players/${c.pid}/path`] = [];
+    updates[`players/${c.pid}/pathIndex`] = 0;
   });
 
+  // 잡기 이벤트
+  if(caughtPlayers.length > 0) {
+    const names = caughtPlayers.map(c => {
+      const piece = PIECE_DEFS.find(d => d.id === c.pieceId);
+      return (piece?.emoji || '') + c.name;
+    }).join(', ');
+    updates['gameData/currentEvent'] = {
+      id: Date.now(),
+      type: 'catch',
+      text: names + ' 잡았어요!'
+    };
+    // 잡으면 한 번 더!
+    isBonus = true;
+  }
+
+  // 카드 노드
   if(isCardNode) {
-    const cards = shuffleCards();
+    const cards = getRandomCards();
     updates['gameData/cardData'] = {
       playerId: myPlayerId,
       cards: cards,
-      isBonus: outcome.bonus,
+      isBonus: isBonus,
       chosen: false
     };
-    showEventDrama('card', '카드를 선택하세요!', 1500);
+    updates['gameData/currentEvent'] = {
+      id: Date.now() + 1,
+      type: 'card',
+      text: '카드를 선택하세요!'
+    };
+    await roomRef.update(updates);
+    return;
   }
 
-  if(caught.length) {
-    showEventDrama('catch', caught.map(c=>c.name).join(', ')+' 잡았어요!', 1800);
-  }
+  // 보너스 턴 또는 다음 차례
+  if(isBonus) {
+    updates['gameData/currentEvent'] = {
+      id: Date.now() + 2,
+      type: 'bonus',
+      text: '한 번 더 던지세요!'
+    };
+    updates['gameData/pendingBonus'] = true;
+  } else {
+    // 다음 플레이어
+    const turnOrder = gameState.gameData?.turnOrder || [];
+    const currentIdx = turnOrder.indexOf(myPlayerId);
+    let nextIdx = (currentIdx + 1) % turnOrder.length;
 
-  if(finished) {
-    updates['status'] = 'finished';
-    updates['gameData/winnerId'] = myPlayerId;
-    setTimeout(() => showEventDrama('goal', myName+' 우승!', 2500), 500);
-  }
-
-  // Handle bonus or next turn
-  if(!finished && !isCardNode) {
-    if(outcome.bonus) {
-      showEventDrama('bonus', '한 번 더 던지세요!', 1500);
-      updates['gameData/pendingBonus'] = true;
-    } else {
-      // Auto next turn
-      const playerIds = Object.keys(players).filter(pid => !players[pid].finished);
-      const curIdx = playerIds.indexOf(myPlayerId);
-      const nextIdx = (curIdx + 1) % playerIds.length;
-      updates['gameData/turnPlayerId'] = playerIds[nextIdx];
-      updates['gameData/pendingBonus'] = false;
+    // 완주한 플레이어 건너뛰기
+    let attempts = 0;
+    while(players[turnOrder[nextIdx]]?.finished && attempts < turnOrder.length) {
+      nextIdx = (nextIdx + 1) % turnOrder.length;
+      attempts++;
     }
+
+    const nextPlayerId = turnOrder[nextIdx];
+    const nextPlayer = players[nextPlayerId];
+    const nextPiece = PIECE_DEFS.find(d => d.id === nextPlayer?.pieceId);
+
+    updates['gameData/turnPlayerId'] = nextPlayerId;
+    updates['gameData/pendingBonus'] = false;
+    updates['gameData/currentEvent'] = {
+      id: Date.now() + 3,
+      type: 'turn',
+      playerName: nextPlayer?.name,
+      emoji: nextPiece?.emoji
+    };
   }
 
   await roomRef.update(updates);
-  animatingMove = false;
 }
 
-// ═══════════════════════════════════════
-// PIECE MOVEMENT ANIMATION
-// ═══════════════════════════════════════
-function animatePieceAlongPath(player, pathNodes) {
-  return new Promise(resolve => {
-    if(pathNodes.length <= 1) { resolve(); return; }
+async function handleGoal(hadBonus) {
+  const myData = gameState.players[myPlayerId];
+  const piece = PIECE_DEFS.find(d => d.id === myData?.pieceId);
 
-    const svg = document.getElementById('boardSvg');
-    const ns = 'http://www.w3.org/2000/svg';
-    const piece = PIECE_DEFS.find(d => d.id === player.pieceId);
-    if(!piece) { resolve(); return; }
-
-    // Create animated piece
-    const group = document.createElementNS(ns, 'g');
-    group.setAttribute('class', 'animated-piece');
-
-    const circle = document.createElementNS(ns, 'circle');
-    circle.setAttribute('r', '24');
-    circle.setAttribute('fill', piece.color);
-    circle.setAttribute('stroke', 'white');
-    circle.setAttribute('stroke-width', '3');
-    circle.setAttribute('filter', 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))');
-
-    const text = document.createElementNS(ns, 'text');
-    text.setAttribute('text-anchor', 'middle');
-    text.setAttribute('font-size', '24');
-    text.setAttribute('dy', '8');
-    text.textContent = piece.emoji;
-
-    group.appendChild(circle);
-    group.appendChild(text);
-    svg.appendChild(group);
-
-    const startPos = nodeXY(pathNodes[0]);
-    group.setAttribute('transform', `translate(${startPos.x}, ${startPos.y})`);
-
-    let step = 0;
-    const stepDuration = 300;
-
-    function animateStep() {
-      if(step >= pathNodes.length - 1) {
-        group.remove();
-        resolve();
-        return;
-      }
-
-      const from = nodeXY(pathNodes[step]);
-      const to = nodeXY(pathNodes[step + 1]);
-      const startTime = performance.now();
-
-      function animate(now) {
-        const t = Math.min((now - startTime) / stepDuration, 1);
-        const ease = t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t+2,2)/2;
-
-        const x = from.x + (to.x - from.x) * ease;
-        const y = from.y + (to.y - from.y) * ease;
-        const bounce = Math.sin(t * Math.PI) * 15;
-
-        group.setAttribute('transform', `translate(${x}, ${y - bounce})`);
-
-        if(t < 1) {
-          requestAnimationFrame(animate);
-        } else {
-          step++;
-          setTimeout(animateStep, 50);
-        }
-      }
-      requestAnimationFrame(animate);
+  await roomRef.update({
+    [`players/${myPlayerId}/finished`]: true,
+    'status': 'finished',
+    'gameData/winnerId': myPlayerId,
+    'gameData/currentEvent': {
+      id: Date.now(),
+      type: 'goal',
+      text: (piece?.emoji || '') + ' ' + myData.name + ' 우승!'
     }
-
-    animateStep();
   });
 }
 
 // ═══════════════════════════════════════
-// CARD SYSTEM
+// CARDS - 확장된 미스터리 카드
 // ═══════════════════════════════════════
 const CARDS = [
-  {id:'back1', icon:'⬅️', title:'뒤로 한 칸!', desc:'한 칸 후퇴', effect:-1},
-  {id:'again', icon:'🔄', title:'한 번 더!', desc:'다시 던지기', effect:'again'},
-  {id:'forward1', icon:'➡️', title:'앞으로 한 칸!', desc:'한 칸 전진', effect:1},
-  {id:'forward2', icon:'⏩', title:'앞으로 두 칸!', desc:'두 칸 전진', effect:2},
-  {id:'reset', icon:'🏠', title:'처음으로!', desc:'출발점 이동', effect:'reset'},
+  {id:'back1', icon:'⬅️', title:'뒤로 1칸', desc:'1칸 후퇴', effect:{type:'move', steps:-1}},
+  {id:'back2', icon:'⏪', title:'뒤로 2칸', desc:'2칸 후퇴', effect:{type:'move', steps:-2}},
+  {id:'forward1', icon:'➡️', title:'앞으로 1칸', desc:'1칸 전진', effect:{type:'move', steps:1}},
+  {id:'forward2', icon:'⏩', title:'앞으로 2칸', desc:'2칸 전진', effect:{type:'move', steps:2}},
+  {id:'again', icon:'🔄', title:'한 번 더!', desc:'다시 던지기', effect:{type:'bonus'}},
+  {id:'reset', icon:'🏠', title:'처음으로!', desc:'출발점 이동', effect:{type:'reset'}},
+  {id:'goto_east', icon:'🌅', title:'동으로 이동', desc:'동(5번)으로 이동', effect:{type:'goto', node:5}},
+  {id:'goto_west', icon:'🌄', title:'서로 이동', desc:'서(15번)으로 이동', effect:{type:'goto', node:15}},
+  {id:'goto_north', icon:'⛰️', title:'북으로 이동', desc:'북(10번)으로 이동', effect:{type:'goto', node:10}},
+  {id:'catch_chick', icon:'🐥', title:'병아리 잡기', desc:'병아리 말 잡기', effect:{type:'catch', target:'chick'}},
+  {id:'catch_pig', icon:'🐷', title:'돼지 잡기', desc:'돼지 말 잡기', effect:{type:'catch', target:'pig'}},
+  {id:'catch_any', icon:'🎯', title:'아무나 잡기', desc:'아무 말이나 잡기', effect:{type:'catch', target:'any'}},
 ];
 
-function shuffleCards() {
-  return [...CARDS].sort(() => Math.random()-.5).slice(0,3);
+function getRandomCards() {
+  const shuffled = [...CARDS].sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, 3);
 }
 
 function showCardOverlay(cardData) {
-  const container = document.getElementById('cardChoices');
   const players = gameState.players || {};
   const player = players[cardData.playerId];
   const piece = PIECE_DEFS.find(d => d.id === player?.pieceId);
 
   document.getElementById('cardPopupSub').textContent = `${piece?.emoji||''} ${player?.name||''} — 카드를 선택하세요!`;
 
-  container.innerHTML = cardData.cards.map((card, i) => `
+  document.getElementById('cardChoices').innerHTML = cardData.cards.map((card, i) => `
     <div class="card-choice face-down" id="cc-${i}" onclick="revealCard(${i})">
       <span class="cc-icon">${card.icon}</span>
       <div class="cc-title">${card.title}</div>
@@ -1330,6 +1238,7 @@ async function revealCard(idx) {
   const el = document.getElementById('cc-'+idx);
   if(!el || !el.classList.contains('face-down')) return;
 
+  // 카드 공개
   el.classList.remove('face-down');
   [0,1,2].forEach(i => {
     if(i !== idx) {
@@ -1338,62 +1247,110 @@ async function revealCard(idx) {
     }
   });
 
-  setTimeout(async () => {
-    document.getElementById('cardOverlay').classList.remove('show');
+  setTimeout(() => applyCard(card, cardData.isBonus), 900);
+}
 
-    const players = gameState.players || {};
-    const myData = players[myPlayerId];
-    const pos = myData.position || { node: 0, path: 'outer' };
-    let newNode = pos.node;
-    let newPath = pos.path;
+async function applyCard(card, hadBonus) {
+  document.getElementById('cardOverlay').classList.remove('show');
 
-    if(card.effect === 'reset') {
-      newNode = 0;
-      newPath = 'outer';
-    } else if(card.effect === 'again') {
-      await roomRef.child('gameData').update({
-        cardData: null,
-        pendingBonus: true
-      });
-      showEventDrama('bonus', '한 번 더 던지세요!', 1500);
-      return;
-    } else {
-      newNode = Math.max(0, Math.min(19, newNode + card.effect));
-    }
+  const players = gameState.players || {};
+  const myData = players[myPlayerId];
+  let currentPath = myData.path || [...OUTER_PATH];
+  let currentIndex = myData.pathIndex || 0;
 
-    // Check catch
-    const caught = [];
-    Object.entries(players).forEach(([pid, p]) => {
-      if(pid === myPlayerId || p.finished) return;
-      if((p.position?.node || 0) === newNode && newNode !== 0) {
-        caught.push({pid, name: p.name, pieceId: p.pieceId});
+  const effect = card.effect;
+  const updates = {};
+  let giveBonus = hadBonus;
+
+  switch(effect.type) {
+    case 'move':
+      currentIndex = Math.max(0, Math.min(currentPath.length - 1, currentIndex + effect.steps));
+      updates[`players/${myPlayerId}/pathIndex`] = currentIndex;
+      break;
+
+    case 'bonus':
+      giveBonus = true;
+      break;
+
+    case 'reset':
+      updates[`players/${myPlayerId}/path`] = [];
+      updates[`players/${myPlayerId}/pathIndex`] = 0;
+      break;
+
+    case 'goto':
+      // 해당 노드로 이동 (바깥길에서 해당 위치)
+      const targetNode = effect.node;
+      const outerIndex = OUTER_PATH.indexOf(targetNode);
+      if(outerIndex >= 0) {
+        updates[`players/${myPlayerId}/path`] = [...OUTER_PATH];
+        updates[`players/${myPlayerId}/pathIndex`] = outerIndex;
       }
-    });
+      break;
 
-    const updates = {};
-    updates[`players/${myPlayerId}/position`] = { node: newNode, path: newPath };
-    caught.forEach(c => {
-      updates[`players/${c.pid}/position`] = { node: 0, path: 'outer' };
-    });
-    updates['gameData/cardData'] = null;
+    case 'catch':
+      // 특정 말 잡기
+      const target = effect.target;
+      let caught = null;
 
-    if(cardData.isBonus) {
-      updates['gameData/pendingBonus'] = true;
-      showEventDrama('bonus', '한 번 더 던지세요!', 1500);
-    } else {
-      const playerIds = Object.keys(players).filter(pid => !players[pid].finished);
-      const curIdx = playerIds.indexOf(myPlayerId);
-      const nextIdx = (curIdx + 1) % playerIds.length;
-      updates['gameData/turnPlayerId'] = playerIds[nextIdx];
-      updates['gameData/pendingBonus'] = false;
+      Object.entries(players).forEach(([pid, p]) => {
+        if(pid === myPlayerId || p.finished || caught) return;
+        if(target === 'any' || p.pieceId === target) {
+          caught = { pid, name: p.name, pieceId: p.pieceId };
+        }
+      });
+
+      if(caught) {
+        updates[`players/${caught.pid}/path`] = [];
+        updates[`players/${caught.pid}/pathIndex`] = 0;
+        const caughtPiece = PIECE_DEFS.find(d => d.id === caught.pieceId);
+        updates['gameData/currentEvent'] = {
+          id: Date.now(),
+          type: 'catch',
+          text: (caughtPiece?.emoji || '') + caught.name + ' 잡았어요!'
+        };
+        giveBonus = true; // 잡으면 한 번 더
+      }
+      break;
+  }
+
+  // 카드 데이터 제거
+  updates['gameData/cardData'] = null;
+
+  // 보너스 또는 다음 턴
+  if(giveBonus) {
+    updates['gameData/pendingBonus'] = true;
+    if(!updates['gameData/currentEvent']) {
+      updates['gameData/currentEvent'] = {
+        id: Date.now(),
+        type: 'bonus',
+        text: '한 번 더 던지세요!'
+      };
+    }
+  } else {
+    // 다음 플레이어
+    const turnOrder = gameState.gameData?.turnOrder || [];
+    const currentIdx = turnOrder.indexOf(myPlayerId);
+    let nextIdx = (currentIdx + 1) % turnOrder.length;
+
+    while(players[turnOrder[nextIdx]]?.finished && nextIdx !== currentIdx) {
+      nextIdx = (nextIdx + 1) % turnOrder.length;
     }
 
-    if(caught.length) {
-      showEventDrama('catch', caught.map(c=>c.name).join(', ')+' 잡았어요!', 1800);
-    }
+    const nextPlayerId = turnOrder[nextIdx];
+    const nextPlayer = players[nextPlayerId];
+    const nextPiece = PIECE_DEFS.find(d => d.id === nextPlayer?.pieceId);
 
-    await roomRef.update(updates);
-  }, 900);
+    updates['gameData/turnPlayerId'] = nextPlayerId;
+    updates['gameData/pendingBonus'] = false;
+    updates['gameData/currentEvent'] = {
+      id: Date.now(),
+      type: 'turn',
+      playerName: nextPlayer?.name,
+      emoji: nextPiece?.emoji
+    };
+  }
+
+  await roomRef.update(updates);
 }
 
 // ═══════════════════════════════════════
@@ -1403,6 +1360,7 @@ function renderBoard() {
   const svg = document.getElementById('boardSvg');
   svg.innerHTML = '';
   const ns = 'http://www.w3.org/2000/svg';
+
   function el(tag, attrs, txt) {
     const e = document.createElementNS(ns, tag);
     Object.entries(attrs).forEach(([k,v]) => e.setAttribute(k,v));
@@ -1410,28 +1368,35 @@ function renderBoard() {
     return e;
   }
 
-  // Background
+  // 배경
   svg.appendChild(el('rect',{x:0,y:0,width:500,height:500,fill:'#fdf6e8',rx:14}));
   svg.appendChild(el('rect',{x:4,y:4,width:492,height:492,fill:'none',stroke:'#d4b886','stroke-width':2.5,rx:12,'stroke-dasharray':'8,5'}));
 
-  // Outer lines
+  // 바깥 경로 선
   for(let i=0;i<20;i++){
-    const a=OUTER[i],b=OUTER[(i+1)%20];
+    const a=OUTER[i], b=OUTER[(i+1)%20];
     svg.appendChild(el('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:'#c8a878','stroke-width':3,'stroke-dasharray':'6,4'}));
   }
 
-  // Diagonal lines
-  [[0,21],[21,20],[20,23],[23,10],[5,24],[24,20],[20,22],[22,15]].forEach(([a,b])=>{
-    const p1=a<20?OUTER[a]:INNER[a],p2=b<20?OUTER[b]:INNER[b];
+  // 대각선 (지름길)
+  const diagonals = [
+    [0, 28], [28, 22], [22, 26], [26, 10], // 출발-중앙-북
+    [5, 29], [29, 22], // 동-중앙
+    [22, 24], [24, 15], // 중앙-서
+  ];
+  diagonals.forEach(([a, b]) => {
+    const p1 = getNodeXY(a), p2 = getNodeXY(b);
     svg.appendChild(el('line',{x1:p1.x,y1:p1.y,x2:p2.x,y2:p2.y,stroke:'#b8986a','stroke-width':2.5,'stroke-dasharray':'5,4'}));
   });
 
-  // Outer nodes
+  // 바깥 노드
   for(let i=0;i<20;i++){
-    const p=OUTER[i];
-    const isHome=i===0, isCorner=CORNER_NODES.has(i)&&i!==0, isCard=CARD_NODES.has(i);
-    const r=isHome?30:isCorner?24:isCard?32:16;
-    let fill='white',stroke='#c8a878',sw=2;
+    const p = OUTER[i];
+    const isHome = i===0;
+    const isCorner = SHORTCUT_CORNERS.has(i);
+    const isCard = CARD_NODES.has(i);
+    const r = isHome?30 : isCorner?24 : isCard?32 : 16;
+    let fill='white', stroke='#c8a878', sw=2;
 
     if(isHome){fill='#4caf6e';stroke='#2e7d32';sw=4;}
     else if(isCard){fill='#e8daff';stroke='#6c5ce7';sw=3;}
@@ -1441,55 +1406,53 @@ function renderBoard() {
 
     if(isCard){
       svg.appendChild(el('circle',{cx:p.x,cy:p.y,r:r+6,fill:'none',stroke:'#a29bfe','stroke-width':2,opacity:'0.5'}));
-      svg.appendChild(el('circle',{cx:p.x,cy:p.y,r:r+12,fill:'none',stroke:'#a29bfe','stroke-width':1,opacity:'0.3'}));
-    }
-
-    if(isHome){
+      svg.appendChild(el('text',{x:p.x,y:p.y+10,'text-anchor':'middle','font-size':36},'🔮'));
+    } else if(isHome){
       svg.appendChild(el('text',{x:p.x,y:p.y-40,'text-anchor':'middle','font-family':'Jua','font-size':14,fill:'#2e7d32'},'🏁 출발/골인'));
       svg.appendChild(el('text',{x:p.x,y:p.y+7,'text-anchor':'middle','font-family':'Jua','font-size':15,fill:'white'},'HOME'));
-    } else if(isCard){
-      svg.appendChild(el('text',{x:p.x,y:p.y+8,'text-anchor':'middle','font-size':36},'🔮'));
     } else if(isCorner){
-      const lbl={5:'동',10:'북',15:'서'};
-      svg.appendChild(el('text',{x:p.x,y:p.y-28,'text-anchor':'middle','font-family':'Jua','font-size':11,fill:'#b8864e'},'⭐지름길'));
-      svg.appendChild(el('text',{x:p.x,y:p.y+6,'text-anchor':'middle','font-family':'Jua','font-size':14,fill:'#7a5230'},lbl[i]));
+      const labels = {5:'동',10:'북',15:'서'};
+      svg.appendChild(el('text',{x:p.x,y:p.y-28,'text-anchor':'middle','font-family':'Jua','font-size':10,fill:'#b8864e'},'⭐지름길'));
+      svg.appendChild(el('text',{x:p.x,y:p.y+6,'text-anchor':'middle','font-family':'Jua','font-size':14,fill:'#7a5230'},labels[i]));
     } else {
       svg.appendChild(el('text',{x:p.x,y:p.y+5,'text-anchor':'middle','font-family':'Jua','font-size':11,fill:'#a08060'},i));
     }
   }
 
-  // Inner nodes
-  Object.entries(INNER).forEach(([id,p])=>{
-    const nid=parseInt(id);
-    const isCenter=nid===20;
-    const isCard=CARD_NODES.has(nid);
-    const r=isCenter?30:16;
-    const fill=isCenter||isCard?'#e8daff':'#fdf0d8';
-    const stroke=isCenter||isCard?'#6c5ce7':'#b8864e';
+  // 내부 노드
+  Object.entries(INNER_NODES).forEach(([id, p]) => {
+    const nid = parseInt(id);
+    const isCenter = nid === 22;
+    const isCard = CARD_NODES.has(nid);
+    const r = isCenter?30:18;
+    const fill = isCenter||isCard?'#e8daff':'#fdf0d8';
+    const stroke = isCenter||isCard?'#6c5ce7':'#b8864e';
 
     svg.appendChild(el('circle',{cx:p.x,cy:p.y,r,fill,stroke,'stroke-width':isCenter?4:2}));
 
-    if(isCenter){
+    if(isCenter) {
       svg.appendChild(el('circle',{cx:p.x,cy:p.y,r:r+8,fill:'none',stroke:'#a29bfe','stroke-width':2,opacity:'0.5'}));
       svg.appendChild(el('text',{x:p.x,y:p.y+10,'text-anchor':'middle','font-size':40},'🔮'));
     }
   });
 
-  // Players
+  // 플레이어 말
   const players = gameState?.players || {};
   const gd = gameState?.gameData || {};
   const byNode = {};
 
   Object.entries(players).forEach(([pid, p]) => {
     if(p.finished) return;
-    const node = p.position?.node || 0;
+    const path = p.path || [];
+    const idx = p.pathIndex || 0;
+    const node = path.length > 0 ? path[idx] : 0;
     if(!byNode[node]) byNode[node] = [];
-    byNode[node].push({...p, oddy: pid});
+    byNode[node].push({...p, oddy: pid, node});
   });
 
   Object.entries(byNode).forEach(([nodeStr, plist]) => {
     const node = parseInt(nodeStr);
-    const base = node<20 ? OUTER[node] : INNER[node] || {x:CX,y:CY};
+    const base = getNodeXY(node);
     const n = plist.length;
 
     plist.forEach((p, k) => {
@@ -1512,7 +1475,7 @@ function renderBoard() {
       svg.appendChild(el('ellipse',{cx:px+2,cy:py+R-2,rx:R-3,ry:7,fill:'rgba(0,0,0,0.25)'}));
       svg.appendChild(el('circle',{cx:px,cy:py,r:R,fill:piece.color,stroke:'white','stroke-width':3}));
       svg.appendChild(el('text',{x:px,y:py+8,'text-anchor':'middle','font-size':24},piece.emoji));
-      svg.appendChild(el('text',{x:px,y:py+R+14,'text-anchor':'middle','font-family':'Jua','font-size':11,fill:piece.color,'font-weight':'bold'},p.name));
+      svg.appendChild(el('text',{x:px,y:py+R+14,'text-anchor':'middle','font-family':'Jua','font-size':11,fill:piece.color},p.name));
     });
   });
 }
@@ -1526,13 +1489,16 @@ function renderPlayerListBottom() {
     const piece = PIECE_DEFS.find(d => d.id === p.pieceId);
     const isActive = pid === gd.turnPlayerId;
     const isMe = pid === myPlayerId;
-    const node = p.position?.node || 0;
+    const path = p.path || [];
+    const idx = p.pathIndex || 0;
+    const node = path.length > 0 ? path[idx] : -1;
+
     return `
       <div class="p-card ${isActive?'active':''} ${p.finished?'finished':''} ${isMe?'me':''}">
         <div class="p-emoji-big">${piece?.emoji||'❓'}</div>
         <div class="p-info">
           <div class="p-name">${p.name}${isMe?' (나)':''}${p.finished?' 🏆':''}</div>
-          <div class="p-pos">${p.finished?'완주!':node===0?'출발 전':`${node}번째 칸`}</div>
+          <div class="p-pos">${p.finished?'완주!':node<0?'출발 전':`${node}번 칸`}</div>
         </div>
       </div>`;
   }).join('');
@@ -1545,21 +1511,32 @@ async function restartGame() {
   if(!isHost) return;
 
   const players = gameState.players || {};
+  const playerIds = Object.keys(players);
+  const firstPlayer = players[playerIds[0]];
+  const firstPiece = PIECE_DEFS.find(d => d.id === firstPlayer?.pieceId);
+
   const updates = { status: 'playing' };
-  updates['gameData/turnPlayerId'] = Object.keys(players)[0];
-  updates['gameData/lastAction'] = null;
+  updates['gameData/turnPlayerId'] = playerIds[0];
+  updates['gameData/turnOrder'] = playerIds;
   updates['gameData/pendingBonus'] = false;
   updates['gameData/cardData'] = null;
+  updates['gameData/shortcutData'] = null;
   updates['gameData/winnerId'] = null;
+  updates['gameData/currentEvent'] = {
+    id: Date.now(),
+    type: 'turn',
+    playerName: firstPlayer?.name,
+    emoji: firstPiece?.emoji
+  };
 
   Object.keys(players).forEach(pid => {
-    updates[`players/${pid}/position`] = { node: 0, path: 'outer' };
+    updates[`players/${pid}/path`] = [];
+    updates[`players/${pid}/pathIndex`] = 0;
     updates[`players/${pid}/finished`] = false;
   });
 
   await roomRef.update(updates);
   document.getElementById('winnerBox').classList.remove('show');
-  lastTurnPlayerId = null;
 }
 
 async function leaveRoom() {
@@ -1580,14 +1557,12 @@ function resetToLobby() {
   isHost = false;
   selectedPiece = null;
   throwing = false;
-  animatingMove = false;
-  lastTurnPlayerId = null;
+  lastEventId = null;
+  pendingShortcutData = null;
 
   document.getElementById('winnerBox').classList.remove('show');
   document.getElementById('cardOverlay').classList.remove('show');
   document.getElementById('shortcutOverlay').classList.remove('show');
-  document.getElementById('stickDisplay').innerHTML = '';
-  document.getElementById('yutNameDisplay').textContent = '';
 
   showScreen('lobbyScreen');
 }
